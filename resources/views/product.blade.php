@@ -2,6 +2,8 @@
 
 @section('content')
 
-	<h1></h1> <!-- Make a definite product card here later -->
+	<div>
+		<h1>{{ $product }}</h1>
+	</div>
 
 @endsection
