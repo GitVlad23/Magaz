@@ -29,3 +29,4 @@ Route::get('/{category}/{product?}', [MainController::class, 'product'])->name('
 Route::get('/basket/place', [BasketController::class, 'basketPlace'])->name('basket-place');
 
 Route::post('/basket/add/{id}', [BasketController::class, 'basketAdd'])->name('basket-add');
+Route::post('/basket/remove/{id}', [BasketController::class, 'basketRemove'])->name('basket-remove');
