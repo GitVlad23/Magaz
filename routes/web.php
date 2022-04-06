@@ -15,18 +15,15 @@ use App\Http\Controllers\BasketController;
 |
 */
 
-Route::get('/', [MainController::class, 'main']);
+Route::get('/', [MainController::class, 'main'])->name('main');
 Route::get('/categories', [MainController::class, 'categories']);
 
 
 Route::get('/basket', [BasketController::class, 'basket'])->name('basket');
-
+Route::post('/basket/place', [BasketController::class, 'basketConfirm'])->name('basket-confirm');
+Route::get('/basket/place', [BasketController::class, 'basketPlace'])->name('basket-place');
+Route::post('/basket/add/{id}', [BasketController::class, 'basketAdd'])->name('basket-add');
+Route::post('/basket/remove/{id}', [BasketController::class, 'basketRemove'])->name('basket-remove');
 
 Route::get('/{code}', [MainController::class, 'category']);
 Route::get('/{category}/{product?}', [MainController::class, 'product'])->name('product');
-
-
-Route::get('/basket/place', [BasketController::class, 'basketPlace'])->name('basket-place');
-
-Route::post('/basket/add/{id}', [BasketController::class, 'basketAdd'])->name('basket-add');
-Route::post('/basket/remove/{id}', [BasketController::class, 'basketRemove'])->name('basket-remove');

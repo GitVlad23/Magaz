@@ -11,4 +11,8 @@
 	</div>
 	@endforeach
 
+	<form action="{{ route('main') }}" method="GET">
+		<button type="submit" class="btn btn-success">Back to main</button>
+	</form>
+
 @endsection
