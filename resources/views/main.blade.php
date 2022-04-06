@@ -9,6 +9,10 @@
 	<p class="alert alert-success">{{ session()->get('success') }}</p>
 @endif
 
+@if(session()->has('warning'))
+	<p class="alert alert-success">{{ session()->get('warning') }}</p>
+@endif
+
 @foreach($products as $product)
 	@include('card', compact('product'))
 @endforeach
