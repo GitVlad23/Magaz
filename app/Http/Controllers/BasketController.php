@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Order;
 use App\Models\Product;
 
@@ -84,6 +85,13 @@ class BasketController extends Controller
         } else
         {
             $order->products()->attach($productId);
+        }
+
+
+        if(Auth::check())
+        {
+            $order->user_id = Auth::id();
+            $order->save();
         }
 
 

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class UpdateOrderProductTable extends Migration
+class CreateAdminUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class UpdateOrderProductTable extends Migration
      */
     public function up()
     {
-        Schema::table('order_product', function (Blueprint $table) {
-            $table->integer('count')->default(1)->after('product_id');
+        Schema::create('admin_users', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->string('password');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +29,6 @@ class UpdateOrderProductTable extends Migration
      */
     public function down()
     {
-        Schema::table('order_product', function (Blueprint $table) {
-            $table->dropColumn('count');
-        });
+        Schema::dropIfExists('admin_users');
     }
 }

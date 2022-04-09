@@ -1,4 +1,4 @@
-<div style="border-bottom: 2px solid black">
+<div style="border-top: 2px solid black">
 	<h2>{{ $product->name }}</h2>
 	<p>{{ $product->price }} Rub</p>
 	<h5>{{ $product->category->name }}a</h5a>
