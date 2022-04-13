@@ -5,6 +5,10 @@
 	<h1>Orders</h1>
 
 	<a href="{{ route('categories.index') }}" type="submit" class="btn btn-success">Categories</a>
+	
+	<a href="{{ route('admin_logout') }}" type="submit" class="btn btn-danger">Logout and back to main</a>
+
+	<br><br>
 
 	@foreach($orders as $el)
 	<div class="panel" style="border-bottom: 2px solid black;">
@@ -15,6 +19,5 @@
 	</div>
 	@endforeach
 
-	<a href="{{ route('admin_logout') }}" type="submit" class="btn btn-success">Logout and back to main</a>
 
 @endsection

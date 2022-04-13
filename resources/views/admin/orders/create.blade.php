@@ -13,9 +13,9 @@
 			@csrf
 
 			@method('PUT')
-			<input type="text" name="code" id="code" value="{{ $category->code }}">
-			<input type="text" name="name" id="name" value="{{ $category->name }}">
-			<input type="text" name="description" id="description" value="{{ $category->description }}">
+			<input type="text" name="code" id="code" value="{{ $category->code }}"><br>
+			<input type="text" name="name" id="name" value="{{ $category->name }}"><br>
+			<input type="text" name="description" id="description" value="{{ $category->description }}"><br><br>
 
 			<button type="submit" class="btn btn-primary">Save</button>
 		</form>
@@ -33,9 +33,9 @@
 		<form action="{{ route('categories.store') }}" method="POST">
 			@csrf
 
-			<input type="text" name="code" id="code" placeholder="Code">
-			<input type="text" name="name" id="name" placeholder="Name">
-			<input type="text" name="description" id="description" placeholder="Description">
+			<input type="text" name="code" id="code" placeholder="Code"><br>
+			<input type="text" name="name" id="name" placeholder="Name"><br>
+			<input type="text" name="description" id="description" placeholder="Description"><br><br>
 
 			<button type="submit" class="btn btn-primary">Save</button>
 		</form>

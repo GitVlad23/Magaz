@@ -11,8 +11,8 @@
 
 <a href="{{ route('logout') }}" type="submit" class="btn btn-primary">Logout</a>
 
-<a href="{{ route('login') }}" type="submit" class="btn btn-success">Sing up</a>
-<a href="{{ route('register') }}" type="submit" class="btn btn-danger">Sing in</a>
+<a href="{{ route('login') }}" type="submit" class="btn btn-success">Sing in</a>
+<a href="{{ route('register') }}" type="submit" class="btn btn-danger">Sing up</a>
 
 <a href="{{ route('basket') }}" type="submit" class="btn btn-primary">Basket</a><br>
 
