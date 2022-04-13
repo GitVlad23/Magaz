@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\BasketController;
+use App\Http\Controllers\Admin\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,8 @@ use App\Http\Controllers\BasketController;
 |
 */
 
+
+Route::resource('/admin/categories', CategoryController::class);
 
 Route::get('/auth/login', [AuthController::class, 'loginForm'])->name('login');
 Route::get('/auth/register', [AuthController::class, 'registerForm'])->name('register');
