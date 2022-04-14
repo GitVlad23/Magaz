@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\BasketController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,7 @@ use App\Http\Controllers\Admin\CategoryController;
 
 
 Route::resource('/admin/categories', CategoryController::class);
+Route::resource('/admin/products', ProductController::class);
 
 Route::get('/auth/login', [AuthController::class, 'loginForm'])->name('login');
 Route::get('/auth/register', [AuthController::class, 'registerForm'])->name('register');

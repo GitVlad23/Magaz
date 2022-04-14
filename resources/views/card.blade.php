@@ -3,6 +3,7 @@
 	<p>{{ $product->price }} Rub</p>
 	<h5>{{ $product->category->name }}a</h5a>
 	<p>{{ $product->description }}</p>
+	<h5><img src="{{ Storage::url($product->image) }}" height="120px"></h5>
 
 	<form action="{{ route('basket-add', $product) }}" method="POST">
 		@csrf

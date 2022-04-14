@@ -2,7 +2,7 @@
 
 @section('content')
 
-	<h1>Orders</h1>
+	<h1>Categories</h1>
 
 	@foreach($categories as $el)
 	<div class="panel" style="border-bottom: 2px solid black;">

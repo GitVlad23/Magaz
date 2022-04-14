@@ -5,6 +5,8 @@
 	<h1>Orders</h1>
 
 	<a href="{{ route('categories.index') }}" type="submit" class="btn btn-success">Categories</a>
+
+	<a href="{{ route('products.index') }}" type="submit" class="btn btn-success">Products</a>
 	
 	<a href="{{ route('admin_logout') }}" type="submit" class="btn btn-danger">Logout and back to main</a>
 

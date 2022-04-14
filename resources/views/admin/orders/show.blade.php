@@ -9,6 +9,7 @@
 	<h3>ID: {{ $category->id }}</h3>
 	<h3>Code: {{ $category->code }}</h3>
 	<h3>Description: {{ $category->description }}</h3>
+	<h3>Image: <img src="{{ Storage::url($category->image) }}" height="240px"></h3>
 	<h3>Products amount: {{ $category->products()->count() }}</h3>
 
 	<br>
