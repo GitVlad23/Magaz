@@ -13,8 +13,19 @@
 			@csrf
 
 			@method('PUT')
+			@error('code')
+				<div class="alert alert-danger">{{ $message }}</div>
+			@enderror
 			<input type="text" name="code" id="code" value="{{ $category->code }}"><br>
+
+			@error('name')
+				<div class="alert alert-danger">{{ $message }}</div>
+			@enderror
 			<input type="text" name="name" id="name" value="{{ $category->name }}"><br>
+
+			@error('description')
+				<div class="alert alert-danger">{{ $message }}</div>
+			@enderror
 			<input type="text" name="description" id="description" value="{{ $category->description }}"><br><br>
 
 			<div>
@@ -40,8 +51,19 @@
 		<form action="{{ route('categories.store') }}" method="POST" enctype="multipart/form-data">
 			@csrf
 
+			@error('code')
+				<div class="alert alert-danger">{{ $message }}</div>
+			@enderror
 			<input type="text" name="code" id="code" placeholder="Code"><br>
+
+			@error('name')
+				<div class="alert alert-danger">{{ $message }}</div>
+			@enderror
 			<input type="text" name="name" id="name" placeholder="Name"><br>
+
+			@error('description')
+				<div class="alert alert-danger">{{ $message }}</div>
+			@enderror
 			<input type="text" name="description" id="description" placeholder="Description"><br><br>
 
 			<div>
