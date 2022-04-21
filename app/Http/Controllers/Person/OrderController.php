@@ -1,17 +1,18 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Person;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\Order;
-use App\Models\Category;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class OrderController extends Controller
 {
     public function index()
     {
-        $orders = Order::where('status', 1)->get();
+        $orders = Auth::user()->orders()->where('status', 1)->get();
 
         return view('/admin/orders/index', compact('orders'));
     }
@@ -19,6 +20,11 @@ class OrderController extends Controller
 
     public function show(Order $order)
     {
+        if(!Auth::user()->orders->contains($order))
+        {
+            return back();
+        }
+
         return view('/admin/orders/order', compact('order'));
     }
 }

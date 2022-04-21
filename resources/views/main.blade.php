@@ -7,14 +7,20 @@
 	@auth('web'){{ $user = auth()->user()->name; }}!@endauth
 </h1>
 
-<a href="{{ route('admin_login') }}" type="submit" class="btn btn-danger">Admin Panel</a>
 
-<a href="{{ route('logout') }}" type="submit" class="btn btn-primary">Logout</a>
 
-<a href="{{ route('login') }}" type="submit" class="btn btn-success">Sing in</a>
-<a href="{{ route('register') }}" type="submit" class="btn btn-danger">Sing up</a>
+@guest('web')
+	<a href="{{ route('admin_login') }}" type="submit" class="btn btn-danger">Admin Panel</a>
+	<a href="{{ route('login') }}" type="submit" class="btn btn-success">Sing in</a>
+	<a href="{{ route('register') }}" type="submit" class="btn btn-primary">Sing up</a>
+@endguest
 
-<a href="{{ route('basket') }}" type="submit" class="btn btn-primary">Basket</a><br>
+@auth('web')
+	<a href="{{ route('logout') }}" type="submit" class="btn btn-primary">Logout</a>
+	<a href="{{ route('basket') }}" type="submit" class="btn btn-success">Basket</a>
+	<a href="{{ route('person.orders.index') }}" type="submit" class="btn btn-success">My orders</a><br><br>
+@endauth
+
 
 <a href="/categories">Categories</a><br><br>
 

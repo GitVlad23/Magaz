@@ -13,10 +13,5 @@ Route::middleware('guest:admin')->group(function() {
 Route::middleware('auth:admin')->group(function() {
 	Route::get('/admin/logout', [AuthController::class, 'logout'])->name('admin_logout');
 	Route::get('/admin/orders/index', [OrderController::class, 'index'])->name('admin_index');
-	
-	// Route::get('/admin/orders/categories', [OrderController::class, 'categories'])->name('admin_categories');
-
-/*	Route::get('/admin/orders/categories/show/{categoryID?}', [OrderController::class, 'categories'])->name('category_show');
-	Route::get('/admin/orders/categories/edit/{categoryID?}', [OrderController::class, 'categories'])->name('category_edit');
-	Route::get('/admin/orders/categories/delete/{categoryID?}', [OrderController::class, 'categories'])->name('category_delete');*/
+	Route::get('/admin/orders/{order}', [OrderController::class, 'show'])->name('admin_order_show');
 });

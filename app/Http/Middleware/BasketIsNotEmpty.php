@@ -23,13 +23,13 @@ class BasketIsNotEmpty
         {
             $order = Order::findOrFail($orderId);
 
-            if($order->products->count() == 0)
+            if($order->products->count() > 0)
             {
-                session()->flash('warning', 'Your basket is empty!');
-                return redirect()->route('main');
+                return $next($request);
             }
         }
 
-        return $next($request);
+        session()->flash('warning', 'Your basket is empty!');
+        return redirect()->route('main');
     }
 }
